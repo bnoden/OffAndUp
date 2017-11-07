@@ -5,6 +5,11 @@ const PreviewListing = (() => {
   const itemWindow = document.createElement('div');
   const bufferLayer = document.createElement('div');
   const itemContent = document.createElement('iframe');
+  const urlDisplay = document.createElement('p');
+
+  urlDisplay.style.margin = '0px';
+  urlDisplay.style.padding = '0px';
+  urlDisplay.style.fontSize = '20px';
 
   itemWindow.style.width = '95%';
   itemWindow.style.height = '800px';
@@ -28,6 +33,7 @@ const PreviewListing = (() => {
     if (!appended) {
       document.body.appendChild(bufferLayer);
       document.body.appendChild(itemWindow);
+      itemWindow.appendChild(urlDisplay);
       itemWindow.appendChild(itemContent);
     }
     appended = 1;
@@ -62,7 +68,8 @@ const PreviewListing = (() => {
         linger = 1;
         setTimeout(() => {
           if (linger) {
-            itemContent.setAttribute('src', itemPic[i].parentNode.href);
+            itemContent.src = itemPic[i].parentNode.href;
+            urlDisplay.innerHTML = `${itemPic[i].parentNode.href}`;
             appendLayers();
             openItemWindow();
           }
