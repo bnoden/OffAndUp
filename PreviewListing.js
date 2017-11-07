@@ -5,7 +5,6 @@ const PreviewListing = (() => {
   const itemWindow = document.createElement('div');
   const bufferLayer = document.createElement('div');
   const itemContent = document.createElement('iframe');
-  const itemPic = document.querySelectorAll('.vertical-middle');
 
   itemWindow.style.width = '95%';
   itemWindow.style.height = '800px';
@@ -49,25 +48,45 @@ const PreviewListing = (() => {
     itemContent.setAttribute('src', '');
   };
 
-  for (let i in itemPic) {
-    let linger = 0;
+  setPreviews = itemPic => {
+    itemPic = document.querySelectorAll('.vertical-middle');
+    for (let i in itemPic) {
+      let linger = 0;
 
-    // Cancel itemContent window if mouse leaves before loading
-    itemPic[i].onmouseleave = () => {
-      linger = 0;
-    };
+      // Cancel itemContent window if mouse leaves before loading
+      itemPic[i].onmouseleave = () => {
+        linger = 0;
+      };
 
-    itemPic[i].onmouseenter = () => {
-      linger = 1;
-      setTimeout(() => {
-        if (linger) {
-          itemContent.setAttribute('src', itemPic[i].parentNode.href);
-          appendLayers();
-          openItemWindow();
-        }
-      }, 1250);
-    };
-  }
+      itemPic[i].onmouseenter = () => {
+        linger = 1;
+        setTimeout(() => {
+          if (linger) {
+            itemContent.setAttribute('src', itemPic[i].parentNode.href);
+            appendLayers();
+            openItemWindow();
+          }
+        }, 1250);
+      };
+    }
+  };
+  setPreviews();
+
+  let last_known_scroll_position = 0;
+  let scrolling = 0;
+  function doSomething(scroll_pos) {}
+  window.addEventListener('scroll', e => {
+    last_known_scroll_position = window.scrollY;
+
+    if (!scrolling) {
+      window.requestAnimationFrame(() => {
+        doSomething(last_known_scroll_position);
+        scrolling = 0;
+      });
+      scrolling = 1;
+      setPreviews();
+    }
+  });
 
   bufferLayer.onclick = () => {
     closeItemWindow();

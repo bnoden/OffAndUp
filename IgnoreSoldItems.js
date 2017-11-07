@@ -2,9 +2,8 @@
 
 // Run in browser console or wrapper, during or any time after query.
 const IgnoreSoldItems = (() => {
-  const price = document.querySelectorAll('.item-info-price');
-
-  identifySoldItems = () => {
+  identifySoldItems = price => {
+    price = document.querySelectorAll('.item-info-price');
     for (let item in price) {
       if (price[item].innerHTML === 'SOLD') {
         price[item].parentNode.parentNode.parentNode.style.opacity = 0.25;
