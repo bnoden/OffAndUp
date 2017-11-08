@@ -22,3 +22,6 @@ new tab, but this streamlines the process.
 
 A link is provided at the top, which when clicked, opens the page in a new tab.  
 ___  
+
+#### `ExtendUI`  
+This minified file contains the combined functionality of all the other components.  
