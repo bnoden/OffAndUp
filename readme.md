@@ -1,5 +1,9 @@
 UI extensions for PC version of OfferUp.com  
 
+#### `extendui.min.js`  
+This minified file contains the combined functionality of all the other components.  
+___  
+
 ##### `IgnoreSoldItems`   
 When browsing listings, sold items are mixed in with other results.
 This can be frustrating when you see something you want, only to discover it's already
@@ -21,7 +25,3 @@ re-run `IgnoreSoldItems` upon returning and reloading. Yes, you could open link 
 new tab, but this streamlines the process.  
 
 A link is provided at the top, which when clicked, opens the page in a new tab.  
-___  
-
-#### `ExtendUI`  
-This minified file contains the combined functionality of all the other components.  
