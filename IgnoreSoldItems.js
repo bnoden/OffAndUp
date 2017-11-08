@@ -2,6 +2,7 @@
 
 // Run in browser console or wrapper, during or any time after query.
 const IgnoreSoldItems = (() => {
+
   identifySoldItems = price => {
     price = document.querySelectorAll('.item-info-price');
     for (let item in price) {
@@ -11,13 +12,15 @@ const IgnoreSoldItems = (() => {
       }
     }
   };
+  
   identifySoldItems();
+
   let last_known_scroll_position = 0;
   let scrolling = 0;
   function doSomething(scroll_pos) {}
+
   window.addEventListener('scroll', e => {
     last_known_scroll_position = window.scrollY;
-
     if (!scrolling) {
       window.requestAnimationFrame(() => {
         doSomething(last_known_scroll_position);

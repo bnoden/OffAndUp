@@ -10,6 +10,7 @@ const PreviewListing = (() => {
   urlDisplay.style.margin = '0px';
   urlDisplay.style.padding = '0px';
   urlDisplay.style.fontSize = '20px';
+  urlDisplay.style.fontWeight = '600';
 
   itemWindow.style.width = '95%';
   itemWindow.style.height = '800px';
@@ -60,17 +61,23 @@ const PreviewListing = (() => {
       let linger = 0;
 
       // Cancel itemContent window if mouse leaves before loading
-      itemPic[i].onmouseleave = () => {
-        linger = 0;
-      };
-
+      itemPic[i].onmouseleave = () => linger = 0;
       itemPic[i].onmouseenter = () => {
         linger = 1;
         setTimeout(() => {
           if (linger) {
             itemContent.src = itemPic[i].parentNode.href;
-            urlDisplay.innerHTML = `${itemPic[i].parentNode.href}`;
+            urlDisplay.innerHTML = `<a href=${itemContent.src} target='_blank'>${itemContent.src}</a>`;
             appendLayers();
+
+            const urlHref = urlDisplay.querySelector('a');
+            const hrefColor = '#0f94a8';
+            urlHref.style.color = hrefColor;
+            urlHref.style.textDecoration = 'none';
+
+            urlHref.onmouseover = () => urlHref.style.color = '#01505C';
+            urlHref.onmouseleave = () => urlHref.style.color = hrefColor;
+
             openItemWindow();
           }
         }, 1250);
@@ -95,7 +102,6 @@ const PreviewListing = (() => {
     }
   });
 
-  bufferLayer.onclick = () => {
-    closeItemWindow();
-  };
+  bufferLayer.onclick = () => closeItemWindow();
+
 })();
