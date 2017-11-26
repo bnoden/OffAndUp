@@ -6,11 +6,21 @@ const PreviewListing = (() => {
   const bufferLayer = document.createElement('div');
   const itemContent = document.createElement('iframe');
   const urlDisplay = document.createElement('p');
+  const btnClose = document.createElement('button');
 
   urlDisplay.style.margin = '0px';
   urlDisplay.style.padding = '0px';
   urlDisplay.style.fontSize = '20px';
   urlDisplay.style.fontWeight = '600';
+
+  btnClose.style.position = 'absolute';
+  btnClose.style.right = '24px';
+  btnClose.style.width = '100px';
+  btnClose.style.height = '40px';
+  btnClose.style.fontSize = '20px';
+  btnClose.style.backgroundColor = '#C94949';
+  btnClose.style.color = '#FFF5F5';
+  btnClose.style.borderRadius = '16px';
 
   itemWindow.style.width = '95%';
   itemWindow.style.height = '800px';
@@ -24,7 +34,7 @@ const PreviewListing = (() => {
   bufferLayer.style.position = 'fixed';
   bufferLayer.style.top = '0';
   bufferLayer.style.left = '0';
-  bufferLayer.style.backgroundColor = '#0f94a8';
+  bufferLayer.style.backgroundColor = '#A1C3CC';
 
   itemContent.style.width = '100%';
   itemContent.style.height = '800px';
@@ -61,13 +71,15 @@ const PreviewListing = (() => {
       let linger = 0;
 
       // Cancel itemContent window if mouse leaves before loading
-      itemPic[i].onmouseleave = () => linger = 0;
+      itemPic[i].onmouseleave = () => (linger = 0);
       itemPic[i].onmouseenter = () => {
         linger = 1;
         setTimeout(() => {
           if (linger) {
             itemContent.src = itemPic[i].parentNode.href;
             urlDisplay.innerHTML = `<a href=${itemContent.src} target='_blank'>${itemContent.src}</a>`;
+            btnClose.innerHTML = 'close [x]';
+            urlDisplay.appendChild(btnClose);
             appendLayers();
 
             const urlHref = urlDisplay.querySelector('a');
@@ -75,10 +87,11 @@ const PreviewListing = (() => {
             urlHref.style.color = hrefColor;
             urlHref.style.textDecoration = 'none';
 
-            urlHref.onmouseover = () => urlHref.style.color = '#01505C';
-            urlHref.onmouseleave = () => urlHref.style.color = hrefColor;
+            urlHref.onmouseover = () => (urlHref.style.color = '#01505C');
+            urlHref.onmouseleave = () => (urlHref.style.color = hrefColor);
 
             openItemWindow();
+            btnClose.onclick = () => closeItemWindow();
           }
         }, 1250);
       };
@@ -103,5 +116,4 @@ const PreviewListing = (() => {
   });
 
   bufferLayer.onclick = () => closeItemWindow();
-
 })();
