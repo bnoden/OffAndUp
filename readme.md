@@ -1,6 +1,6 @@
 UI extensions for the PC version of OfferUp.com  
 
-I've been a regular buyer and seller on OfferUp.com for years now. I started OfferUpUI  
+I've been a regular buyer and seller on OfferUp.com for years now. I started OffAndUp  
 in an attempt to improve the UI/UX on the website for PC, for personal use.  
 
 Any feedback, ideas, or requests to expand or improve this will be thoughtfully considered.  
