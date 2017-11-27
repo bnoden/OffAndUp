@@ -1,0 +1,9 @@
+This application (OfferUpUI) does not collect any data, install any hidden software,
+or otherwise infringe upon, or impede the user's privacy or security in any way
+whatsoever.
+
+This application is not capable of such activity in its current form. If these facts
+change in the future, all relevant parties will be informed of such changes as soon
+as is reasonably possible. No such changes shall be visited upon the user of this
+software without the active and documented consent of the particular user, as can be
+reasonable determined under the circumstances.
