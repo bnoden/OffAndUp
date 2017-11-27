@@ -39,4 +39,6 @@ Debug
 Solve bigger problems  
 ___  
 
-<sub><sup><sub>This app does not collect any data or install hidden software, and there is absolutely no charge for its download or use.</sub></sup></sub>
+<sub><sup><sub>This application does not collect any data or install hidden software, and there is absolutely no charge for its download or use. The author of this application is in no way affiliated with OfferUp, Inc. or any of its properties or interests<sup>1</sup>. </sub></sup></sub>
+
+<sub><sub><sup>1. The author of this application is a user of software and services provided by OfferUp, Inc. The two parties have agreed to abide by the Terms of Service as stipulated within the contents of the publicly accessible web address, https://offerup.com/terms/. This agreement comprises the entirety of any relationship between the two parties, past or present, legal or otherwise, at any official capacity, as recognized by each party.</sup></sub></sub>
