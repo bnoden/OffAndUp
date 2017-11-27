@@ -39,4 +39,4 @@ Debug
 Solve bigger problems  
 ___  
 
-<sub><sup><sub><sup>This app does not collect any data or install hidden software, and there is absolutely no charge for its download or use.</sup></sub></sup></sub>
+<sub><sup><sub>This app does not collect any data or install hidden software, and there is absolutely no charge for its download or use.</sub></sup></sub>
