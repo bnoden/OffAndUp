@@ -3,7 +3,7 @@ UI extensions for the PC version of OfferUp.com
 I've been a regular buyer and seller on OfferUp.com for years now. I started OfferUpUI  
 in an attempt to improve the UI/UX on the website for PC, for personal use.  
 
-Any ideas or requests to expand or improve this will be strongly considered.  
+Any feedback, ideas, or requests to expand or improve this will be thoughtfully considered.  
 
 #### `extendui.min.js`  
 This minified file contains the combined functionality of all the other modules and,  
@@ -23,9 +23,10 @@ ___
 
 ##### `ShowItemPage`  
 This shows the item page without leaving the query results page.  Do this by moving  
-the mouse cursor over the item image for 1.25 seconds. Close item page and return  
-to results page by clicking the 'close [x]' button OR by clicking the results page,  
-which during this time will be covered by a light grayish blue tinted layer.  
+the mouse cursor over the item image for 1.25 seconds (will be a configurable user  
+*option*). Close item page and return to results page by clicking the 'close [x]' button  
+OR by clicking the results page, which during this time will be covered by a light  
+grayish blue tinted layer.  
 
 A link is provided at the top of the item page, which when clicked, opens the page  
 in a new tab.  
