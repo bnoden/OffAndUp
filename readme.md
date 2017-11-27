@@ -1,8 +1,8 @@
-UI extensions for the PC version of OfferUp.com  
+Cross-browser extension to improve UI/UX on OfferUp.com
 
-This is now an add-on for FireFox. The add-on can be downloaded at https://addons.mozilla.org/en-US/firefox/addon/offandup/
+Available for Firefox at https://addons.mozilla.org/en-US/firefox/addon/offandup/
 
-It's currently pending review at Chrome Web Store.
+Currently pending review at Chrome Web Store.
 
 I've been a regular buyer and seller on OfferUp.com for years now. I started OffAndUp  
 in an attempt to improve the UI/UX on the website for PC, for personal use.  
