@@ -32,9 +32,9 @@ const ShowItemPage = (() => {
   });
 
   itemWindow.style.width = '80%';
-  itemWindow.style.height = '600px';
-  itemWindow.style.top = '40px';
-  itemWindow.style.left = '2.5%';
+  itemWindow.style.height = '500px';
+  itemWindow.style.top = '30px';
+  itemWindow.style.left = '10%';
   itemWindow.style.position = 'fixed';
   itemWindow.style.backgroundColor = '#ececec';
   itemWindow.style.resize = 'both';
