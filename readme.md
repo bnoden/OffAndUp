@@ -33,8 +33,6 @@ in a new tab.
 ___  
 
 ##### Todo  
-Publish for Chrome, Firefox, and if Edge behaves...! Then Edge, too.  
-Look into publishing for other browsers.  
 Add options  
 Debug  
 Solve bigger problems  
