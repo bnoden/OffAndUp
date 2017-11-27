@@ -1,6 +1,6 @@
-// Preview item after hovering over photo for 1.25 seconds, on OfferUp.com
+// Show item page after hovering over photo for 1.25 seconds, on OfferUp.com
 
-const PreviewListing = (() => {
+const ShowItemPage = (() => {
   const itemWindow = document.createElement('div');
   const bufferLayer = document.createElement('div');
   const itemContent = document.createElement('iframe');
@@ -73,7 +73,7 @@ const PreviewListing = (() => {
     itemContent.setAttribute('src', '');
   };
 
-  setPreviews = itemPic => {
+  setItemPage = itemPic => {
     itemPic = document.querySelectorAll('.vertical-middle');
     for (let i in itemPic) {
       let linger = 0;
@@ -105,7 +105,7 @@ const PreviewListing = (() => {
       };
     }
   };
-  setPreviews();
+  setItemPage();
 
   let last_known_scroll_position = 0;
   let scrolling = 0;
@@ -119,7 +119,7 @@ const PreviewListing = (() => {
         scrolling = 0;
       });
       scrolling = 1;
-      setPreviews();
+      setItemPage();
     }
   });
 
