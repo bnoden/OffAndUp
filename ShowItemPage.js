@@ -5,6 +5,7 @@ const ShowItemPage = (() => {
   const bufferLayer = document.createElement('div');
   const itemContent = document.createElement('iframe');
   const urlDisplay = document.createElement('p');
+  const itemURL = document.createElement('a');
   const btnClose = document.createElement('button');
 
   urlDisplay.style.margin = '0px';
@@ -32,7 +33,7 @@ const ShowItemPage = (() => {
   });
 
   itemWindow.style.width = '80%';
-  itemWindow.style.height = '500px';
+  itemWindow.style.height = '600px';
   itemWindow.style.top = '30px';
   itemWindow.style.left = '10%';
   itemWindow.style.position = 'fixed';
@@ -88,8 +89,11 @@ const ShowItemPage = (() => {
         setTimeout(() => {
           if (linger) {
             itemContent.src = itemPic[i].parentNode.href;
-            urlDisplay.innerHTML = `<a href=${itemContent.src} target='_blank'>${itemContent.src}</a>`;
-            btnClose.innerHTML = 'close [x]';
+            itemURL.href = itemContent.src;
+            itemURL.target = '_blank';
+            itemURL.innerText = itemContent.src;
+            urlDisplay.appendChild(itemURL);
+            btnClose.innerText = 'close [x]';
             urlDisplay.appendChild(btnClose);
             appendLayers();
 
