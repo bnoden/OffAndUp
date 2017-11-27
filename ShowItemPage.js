@@ -12,6 +12,7 @@ const ShowItemPage = (() => {
   urlDisplay.style.fontSize = '20px';
   urlDisplay.style.fontWeight = '600';
 
+  btnClose.style.userSelect = 'none';
   btnClose.style.position = 'absolute';
   btnClose.style.right = '24px';
   btnClose.style.width = '100px';
@@ -30,12 +31,14 @@ const ShowItemPage = (() => {
     event.target.style.backgroundColor = '#C94949';
   });
 
-  itemWindow.style.width = '95%';
-  itemWindow.style.height = '800px';
+  itemWindow.style.width = '80%';
+  itemWindow.style.height = '600px';
   itemWindow.style.top = '40px';
   itemWindow.style.left = '2.5%';
   itemWindow.style.position = 'fixed';
   itemWindow.style.backgroundColor = '#ececec';
+  itemWindow.style.resize = 'both';
+  itemWindow.style.overflow = 'hidden';
 
   bufferLayer.style.width = '100%';
   bufferLayer.style.height = '1200px';
