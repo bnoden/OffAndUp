@@ -1,6 +1,5 @@
 // Preview item after hovering over photo for 1.25 seconds, on OfferUp.com
 
-// Run in browser console or wrapper, during or any time after query.
 const PreviewListing = (() => {
   const itemWindow = document.createElement('div');
   const bufferLayer = document.createElement('div');
@@ -70,7 +69,7 @@ const PreviewListing = (() => {
     for (let i in itemPic) {
       let linger = 0;
 
-      // Cancel itemContent window if mouse leaves before loading
+      // Abort loading of itemContent window if mouse leaves before loading
       itemPic[i].onmouseleave = () => (linger = 0);
       itemPic[i].onmouseenter = () => {
         linger = 1;

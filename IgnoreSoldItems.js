@@ -1,6 +1,5 @@
 // Reduce visibility of SOLD items in OfferUp.com
 
-// Run in browser console or wrapper, during or any time after query.
 const IgnoreSoldItems = (() => {
   identifySoldItems = price => {
     price = document.querySelectorAll('.item-info-price');

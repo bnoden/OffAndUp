@@ -1,7 +1,11 @@
 UI extensions for PC version of OfferUp.com  
 
 #### `extendui.min.js`  
-This minified file contains the combined functionality of all the other components.  
+This minified file contains the combined functionality of all the other components and,  
+at this point, is the only necessary JS file.  
+
+This extension is function on the landing page, the query results page, and  user  
+profile pages (assuming the user has items for sale).
 ___  
 
 ##### `IgnoreSoldItems`   
@@ -16,12 +20,8 @@ ___
 At this point, `ShowListing` would be a more accurate title, because it
 shows the whole item page. Still debating whether to make it more preview-like or
 change the name. This shows the item page without leaving the query results page.
-Do this by moving the mouse cursor over the item image for 1.25 seconds. Exit and
-return to results page by clicking the results page, which during this time is covered
-by a colored layer.
-
-The original intention was to keep you on the results page so you wouldn't have to
-re-run `IgnoreSoldItems` upon returning and reloading. Yes, you could open link in a
-new tab, but this streamlines the process.  
+Do this by moving the mouse cursor over the item image for 1.25 seconds. Close item  
+page and return to results page by clicking the 'close [x]' button OR by clicking  
+the results page, which during this time will be covered by a tinted layer.  
 
 A link is provided at the top, which when clicked, opens the page in a new tab.  
