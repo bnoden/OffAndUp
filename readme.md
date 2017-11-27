@@ -4,8 +4,8 @@ UI extensions for PC version of OfferUp.com
 This minified file contains the combined functionality of all the other components and,  
 at this point, is the only necessary JS file.  
 
-This extension is function on the landing page, the query results page, and  user  
-profile pages (assuming the user has items for sale).
+This extension functions on the landing page, the query results page, and item and user  
+profile pages (assuming the user has multiple items for sale).
 ___  
 
 ##### `IgnoreSoldItems`   

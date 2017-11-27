@@ -8,6 +8,7 @@
     {
       "matches": [
         "https://offerup.com/search/*",
+        "https://offerup.com/item/detail/*",
         "https://offerup.com/p/*",
         "https://offerup.com/"
       ],

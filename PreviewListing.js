@@ -19,7 +19,16 @@ const PreviewListing = (() => {
   btnClose.style.fontSize = '20px';
   btnClose.style.backgroundColor = '#C94949';
   btnClose.style.color = '#FFF5F5';
-  btnClose.style.borderRadius = '16px';
+  btnClose.style.borderColor = '#C94949';
+  btnClose.style.borderRadius = '12px';
+  btnClose.style.borderWidth = '2px';
+  btnClose.style.opacity = 0.9;
+  btnClose.addEventListener('mouseenter', function(event) {
+    event.target.style.backgroundColor = '#B01010';
+  });
+  btnClose.addEventListener('mouseleave', function(event) {
+    event.target.style.backgroundColor = '#C94949';
+  });
 
   itemWindow.style.width = '95%';
   itemWindow.style.height = '800px';
