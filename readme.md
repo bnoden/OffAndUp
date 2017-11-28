@@ -1,6 +1,5 @@
-Cross-browser UI/UX extension for OfferUp.com  
-*Chrome: https://chrome.google.com/webstore/detail/offandup/kaihmhnjmocmppfgkpofegmccjfblbik*  
-*Firefox: https://addons.mozilla.org/en-US/firefox/addon/offandup/*  
+**For Chrome:** https://chrome.google.com/webstore/detail/offandup/kaihmhnjmocmppfgkpofegmccjfblbik  
+**For Firefox:** https://addons.mozilla.org/en-US/firefox/addon/offandup/  
   
 *For the Microsoft Edge version, see the readme file in the `_edge` folder.*  
   
