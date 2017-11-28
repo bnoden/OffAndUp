@@ -2,7 +2,7 @@
   "name": "OffAndUp",
   "description": "For offerup.com. Make sold items less visible, open item pages inside main window, and more.",
   "version": "0.0.3",
-  "homepage_url": "https://github.com/bnoden/OfferUpUI",
+  "homepage_url": "https://github.com/bnoden/OffAndUp",
 
   "content_scripts": [
     {
