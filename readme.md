@@ -1,11 +1,9 @@
-Cross-browser UI/UX extension for OfferUp.com
-
-*Available for Firefox at https://addons.mozilla.org/en-US/firefox/addon/offandup/*  
-
-*For the Microsoft Edge version, see the readme file in the `_edge` folder.*
-
-*Currently pending review at Chrome Web Store.*
-
+Cross-browser UI/UX extension for OfferUp.com  
+*Chrome: https://chrome.google.com/webstore/detail/offandup/kaihmhnjmocmppfgkpofegmccjfblbik*  
+*Firefox: https://addons.mozilla.org/en-US/firefox/addon/offandup/*  
+  
+*For the Microsoft Edge version, see the readme file in the `_edge` folder.*  
+  
 I've been a regular buyer and seller on OfferUp.com for years now. I started OffAndUp  
 in an attempt to improve the UI/UX on the website for PC, for personal use.  
 
