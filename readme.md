@@ -1,7 +1,7 @@
 **For Chrome:** https://chrome.google.com/webstore/detail/offandup/kaihmhnjmocmppfgkpofegmccjfblbik  
 **For Firefox:** https://addons.mozilla.org/en-US/firefox/addon/offandup/  
   
-*For the Microsoft Edge version, see the readme file in the `_edge` folder.*  
+*For the Microsoft Edge version, see the readme file in the `oau_edge` folder.*  
   
 I've been a regular buyer and seller on OfferUp.com for years now. I started OffAndUp  
 in an attempt to improve the UI/UX on the website for PC, for personal use.  
