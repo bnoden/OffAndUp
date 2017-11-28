@@ -9,7 +9,7 @@ The steps for this are as follows:
 2. In Edge, click the `...` button (aka `Settings and more`, on the top-right by default)  
 3. Click `Extensions`  
 4. Click `Load Extension`  
-5. Select the folder that you either extracted or cloned (named `_edge` by default)
+5. Select the folder that you either extracted or cloned (named `oau_edge` by default)
 6. It should now be loaded. Now go to the OffAndUp extension and click on the  
 gear icon for settings.  
 7. Click the toggle switch to `On`. And you're done!  
