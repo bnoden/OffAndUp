@@ -13,27 +13,25 @@ const ShowItemPage = (() => {
   urlDisplay.style.fontSize = '20px';
   urlDisplay.style.fontWeight = '600';
 
+  const btnClose_bgColor = '#C94949';
+  btnClose.style.backgroundColor = btnClose_bgColor;
+  btnClose.onmouseleave = () =>
+    (btnClose.style.backgroundColor = btnClose_bgColor);
+  btnClose.onmouseenter = () => (btnClose.style.backgroundColor = '#B01010');
+  btnClose.style.color = '#FFF5F5';
   btnClose.style.userSelect = 'none';
   btnClose.style.position = 'absolute';
   btnClose.style.right = '24px';
   btnClose.style.width = '100px';
   btnClose.style.height = '40px';
   btnClose.style.fontSize = '20px';
-  btnClose.style.backgroundColor = '#C94949';
-  btnClose.style.color = '#FFF5F5';
   btnClose.style.borderColor = '#C94949';
   btnClose.style.borderRadius = '8px';
   btnClose.style.borderWidth = '2px';
   btnClose.style.opacity = 0.9;
-  btnClose.addEventListener('mouseenter', function(event) {
-    event.target.style.backgroundColor = '#B01010';
-  });
-  btnClose.addEventListener('mouseleave', function(event) {
-    event.target.style.backgroundColor = '#C94949';
-  });
 
   itemWindow.style.width = '80%';
-  itemWindow.style.height = '600px';
+  itemWindow.style.height = `${window.innerHeight * 0.8}px`;
   itemWindow.style.top = '30px';
   itemWindow.style.left = '10%';
   itemWindow.style.position = 'fixed';
