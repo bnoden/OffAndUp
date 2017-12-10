@@ -6,4 +6,4 @@ This application is not capable of such activity in its current form. If these f
 change in the future, all relevant parties will be informed of such changes as soon
 as is reasonably possible. No such changes shall be visited upon the user of this
 software without the active and documented consent of the particular user, as can be
-reasonable determined under the circumstances at the time.
+reasonably determined under the circumstances at the time.
