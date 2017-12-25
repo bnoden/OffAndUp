@@ -24,9 +24,8 @@ be adjusted programmatically. Later it will be a configurable user *option*.
 ___  
 
 ##### `setItemPage`  
-This shows the item page without leaving the query results page.  Do this by moving  
-the mouse cursor over the item image for 1.25 seconds (will be a configurable user  
-*option*). Close item page and return to results page by clicking the 'close [x]' button  
+This shows the item page without leaving the query results page.  Do this by clicking    
+the item picture. Close item page and return to results page by clicking the 'close [x]' button  
 OR by clicking the results page, which during this time will be covered by a light  
 grayish blue tinted layer.  
 
