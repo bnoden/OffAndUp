@@ -1,0 +1,24 @@
+{
+  "name": "off-and-up",
+  "version": "0.0.8",
+  "description": "Cross-browser UI/UX extension for OfferUp.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bnoden/OffAndUp.git"
+  },
+  "author": "Brandon Oden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bnoden/OffAndUp/issues"
+  },
+  "homepage": "https://github.com/bnoden/OffAndUp#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-minify": "^2.1.0",
+    "gulp-zip": "^4.1.0"
+  }
+}
