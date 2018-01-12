@@ -1,3 +1,5 @@
+**Note:** This information needs to be updated, due to a recent, drastic restructuring. See Changelog below.  
+  
 **For Chrome:** https://chrome.google.com/webstore/detail/offandup/kaihmhnjmocmppfgkpofegmccjfblbik  
 **For Firefox:** https://addons.mozilla.org/en-US/firefox/addon/offandup/  
 
@@ -37,6 +39,13 @@ ___
 ___  
 ### Changelog  
 
+### [0.0.8] - 2017-01-12  
+#### Changed  
+- Everything
+  1. Project converted from pure JavaScript to modular Node.js app
+  2. Starting to automate tedious tasks with Gulp.
+  3. Code refactored to drastically reduce the frequency of DOM manipulation. 
+
 ### [0.0.7] - 2017-12-25  
 #### Changed  
 - Improve speed and reliability by:
@@ -44,7 +53,7 @@ ___
  2. Refactoring for more compact, DRY code
 
 - Improve usability by opening the itemFrame with a click instead of a hover  
-- Update styles  
+- Update styles   
 ___  
 
 ##### Todo  
