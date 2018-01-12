@@ -1,4 +1,5 @@
-const ItemContainer = require('./ItemContainer');
-const IdentifySoldItems = require('./IdentifySoldItems');
+const { init } = require('./init');
+const { ItemContainer } = require('./ItemContainer');
+const { IdentifySoldItems } = require('./IdentifySoldItems');
 
-module.exports = { ItemContainer, IdentifySoldItems };
+module.exports = { init, ItemContainer, IdentifySoldItems };

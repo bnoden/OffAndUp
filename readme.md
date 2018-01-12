@@ -15,15 +15,15 @@ This extension functions on the landing page, the query results page, and item a
 profile pages (assuming the user has items for sale).
 ___  
 
-##### `identifySoldItems`  
+##### `IdentifySoldItems`  
 Normally, when browsing listings, sold items are mixed in with other results.
 So you see something you want, only to discover it's already sold!  
-`identifySoldItems` lowers the opacity of sold listings to 0.25, so you can still
+`IdentifySoldItems` lowers the opacity of sold listings to 0.25, so you can still
 see them, but aren't fooled by them. That's my preference, but of course it can easily
 be adjusted programmatically. Later it will be a configurable user *option*.
 ___  
 
-##### `setItemPage`  
+##### `ItemContainer`  
 This shows the item page without leaving the query results page.  Do this by clicking    
 the item picture. Close item page and return to results page by clicking the 'close [x]' button  
 OR by clicking the results page, which during this time will be covered by a light  
@@ -31,6 +31,9 @@ grayish blue tinted layer.
 
 A link is provided at the top of the item page, which when clicked, opens the page  
 in a new tab.  
+___  
+ JavaScript modules are bundled for the browser with [Browserify](https://github.com/browserify/browserify), a cli package requiring global install.  
+ 
 ___  
 ### Changelog  
 

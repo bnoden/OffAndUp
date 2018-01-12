@@ -1,9 +1,11 @@
-const { ItemContainer, IdentifySoldItems } = require('./src');
+const { init, ItemContainer, IdentifySoldItems } = require('./src');
+
+init();
 
 let stateCheck = setInterval(() => {
   if (document.readyState === 'complete') {
-    setItemPage();
-    identifySoldItems();
+    ItemContainer();
+    IdentifySoldItems();
     clearInterval(stateCheck);
   }
 }, 100);
@@ -16,10 +18,10 @@ let pricesLength = prices().length;
 setInterval(() => {
   if (itemsLength !== items().length) {
     itemsLength = items().length;
-    setItemPage();
+    ItemContainer();
   }
   if (pricesLength !== prices().length) {
     pricesLength = items().length;
-    identifySoldItems();
+    IdentifySoldItems();
   }
 }, 100);
