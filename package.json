@@ -1,6 +1,6 @@
 {
   "name": "off-and-up",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "Cross-browser UI/UX extension for OfferUp.com",
   "main": "index.js",
   "scripts": {
