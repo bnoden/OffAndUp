@@ -1,3 +1,3 @@
-const { ChangeVersionNumber } = require('./ChangeVersionNumber');
+const { change, currentVersion, previousVersion, updateManifest, versionUpdated } = require('./VersionNumber');
 
-module.exports = { ChangeVersionNumber };
+module.exports = { change, currentVersion, updateManifest };
