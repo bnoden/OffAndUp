@@ -10,7 +10,7 @@ I've been a regular buyer and seller on OfferUp.com for years now. I started Off
 
 Any feedback, ideas, or requests to expand or improve this will be thoughtfully considered.  
 
-#### `extendui.min.js`  
+#### `oau.min.js`  
 This minified file is, at this point, the only necessary JS file.  
 
 This extension functions on the landing page, the query results page, and item and user  
@@ -39,7 +39,7 @@ ___
 ___  
 ### Changelog  
 
-### [0.0.8] - 2017-01-12  
+### [1.1.1] - 2017-01-16  
 #### Changed  
 - Everything
   1. Project converted from pure JavaScript to modular Node.js app

@@ -83,7 +83,6 @@ module.exports = {
   btnClose,
   btnClose_bgColor,
   bufferLayer,
-
   itemContainer,
   itemFrame,
   itemURL,
