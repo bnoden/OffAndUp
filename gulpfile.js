@@ -15,12 +15,9 @@ const {
 const versionChanged = versionUpdated();
 
 // gulp change  -change version number
-// gulp update  -combines bundle, min, and zip. Must change version number first
 // gulp bundle  -bundle main source files
 // gulp min   -minify resulting js file
 // gulp zip   -zip files for distribution, delete previous zip files. Must change version number first
-
-gulp.task('update', ['bundle', 'min', 'zip']);
 
 gulp.task('bundle', () => {
   browserify({
@@ -57,11 +54,12 @@ gulp.task('zip', function() {
   if (versionUpdated()) {
     console.log('Version number must be changed before update');
   } else {
-    del(['oau_chrome/zip/*', 'oau_firefox/zip/*', 'oau_edge/zip/*']);
+    del(['dist/*.zip', 'oau_chrome/zip/*', 'oau_firefox/zip/*', 'oau_edge/zip/*']);
     console.log(`Deleted ${previous}.zip`);
     gulp
       .src('oau_chrome/src/*')
       .pipe(zip(`${current}.zip`))
+      .pipe(gulp.dest('dist'))
       .pipe(gulp.dest('oau_chrome/zip'))
       .pipe(gulp.dest('oau_firefox/zip'))
       .pipe(gulp.dest('oau_edge/zip'));
