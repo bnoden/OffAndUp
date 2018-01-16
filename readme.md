@@ -39,7 +39,7 @@ ___
 ___  
 ### Changelog  
 
-### [1.1.1] - 2017-01-16  
+### [1.1.1] - 2018-01-16  
 #### Changed  
 - Everything
   1. Project converted from pure JavaScript to modular Node.js app
