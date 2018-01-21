@@ -38,11 +38,11 @@ JavaScript modules are bundled for the browser with [Browserify](https://github.
 it should be installed globally. (`npm install -g browserify`)  
 `gulp-cli` should also be installed globally for the same reasons. (`npm install -g gulp-cli`)  
 
-`gulpfile.js` takes care of mundane tasks, such as:
-    `gulp change`: change version number in all `manifest.json` files and `package.json`  
-    `gulp bundle`: bundle main source files with `browserify`, send to `dist/oau.js`
-    `gulp min`: minify `oau.js`, creating `oau.min.js`
-    `gulp zip`: files are added to `.zip` archive for distribution as required by Chrome Web Store and Firefox Add-ons.  
+`gulpfile.js` takes care of mundane tasks, such as:  
+* `gulp change`: change version number in all `manifest.json` files and `package.json`  
+* `gulp bundle`: bundle main source files with `browserify`, send to `dist/oau.js`
+* `gulp min`: minify `oau.js`, creating `oau.min.js`
+* `gulp zip`: files are added to `.zip` archive for distribution as required by Chrome Web Store and Firefox Add-ons.  
                 Deletes previous `.zip` files. Must `change` version number first (lest I forget).  
                 Zip file names are exactly the version number + '.zip' (ie, `1.1.1.zip`) and placed in a folder  
                 named 'zip' for each browser. Zip file contents vary slightly between browsers.  
