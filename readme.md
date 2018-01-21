@@ -34,10 +34,11 @@ grayish blue tinted layer.
 A link is provided at the top of the item page, which when clicked, opens the page  
 in a new tab.  
 ___  
-JavaScript modules are bundled for the browser with [Browserify](https://github.com/browserify/browserify). To access the cli,
-it should be installed globally. (`npm install -g browserify`)  
-`gulp-cli` should also be installed globally for the same reasons. (`npm install -g gulp-cli`)  
+JavaScript modules are bundled for the browser with [Browserify](https://github.com/browserify/browserify).  
+To access the cli, it should be installed globally. (`npm install -g browserify`)  
 
+`gulp-cli` should also be installed globally for the same reasons. (`npm install -g gulp-cli`)  
+  
 `gulpfile.js` takes care of mundane tasks, such as:  
 * `gulp change`: change version number in all `manifest.json` files and `package.json`  
 * `gulp bundle`: bundle main source files with `browserify`, send to `dist/oau.js`
