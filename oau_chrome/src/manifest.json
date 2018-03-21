@@ -1,1 +1,23 @@
-{"name":"OffAndUp","description":"For offerup.com. Make sold items less visible, open item pages inside main window, and more.","version":"1.1.1","homepage_url":"https://github.com/bnoden/OffAndUp","content_scripts":[{"matches":["https://offerup.com/search/*","https://offerup.com/item/detail/*","https://offerup.com/p/*","https://offerup.com/"],"js":["oau.min.js"]}],"page_action":{"default_icon":"icon.png","default_title":"OfferUp UI Extentions"},"manifest_version":2}
+{
+  "name": "OffAndUp",
+  "description":
+    "For offerup.com. Make sold items less visible, open item pages inside main window, and more.",
+  "version": "1.1.1",
+  "homepage_url": "https://github.com/bnoden/OffAndUp",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://offerup.com/search/*",
+        "https://offerup.com/item/detail/*",
+        "https://offerup.com/p/*",
+        "https://offerup.com/"
+      ],
+      "js": ["oau.min.js"]
+    }
+  ],
+  "page_action": {
+    "default_icon": "icon.png",
+    "default_title": "OfferUp UI Extentions"
+  },
+  "manifest_version": 2
+}
