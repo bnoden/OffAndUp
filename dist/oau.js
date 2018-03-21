@@ -1,11 +1,11 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-const { init, ItemContainer, IdentifySoldItems, func } = require("./src");
+const { init, ItemContainer, IdentifySoldItems, func } = require('./src');
 const { hold, sold, funcmap } = func;
 
 init();
 
 let stateCheck = setInterval(() => {
-  if (document.readyState === "complete") {
+  if (document.readyState === 'complete') {
     ItemContainer();
     IdentifySoldItems();
     clearInterval(stateCheck);
@@ -30,13 +30,13 @@ setInterval(() => {
 }, 100);
 
 },{"./src":5}],2:[function(require,module,exports){
-const func = require("../func").sold;
+const func = require('../func').sold;
 
 module.exports = (list = func.list(), isSold = func.isSold, fade = func.fade) =>
   [...list].map(items => fade([items].filter(item => isSold(item))));
 
 },{"../func":4}],3:[function(require,module,exports){
-const func = require("../func").hold;
+const func = require('../func').hold;
 const {
   btnClose,
   btnClose_bgColor,
@@ -45,21 +45,21 @@ const {
   itemFrame,
   itemURL,
   urlDisplay
-} = require("../init");
+} = require('../init');
 
-const buildItemContainer = (url, urlHref, hrefColor = "#0f94a8") => {
+const buildItemContainer = (url, urlHref, hrefColor = '#0f94a8') => {
   itemURL.innerText = itemURL.href = itemFrame.src = url;
-  itemURL.target = "_blank";
+  itemURL.target = '_blank';
   urlDisplay.appendChild(itemURL);
-  btnClose.innerText = "close [x]";
+  btnClose.innerText = 'close [x]';
   urlDisplay.appendChild(btnClose);
 
   appendLayers();
 
-  urlHref = urlDisplay.querySelector("a");
+  urlHref = urlDisplay.querySelector('a');
   urlHref.style.color = hrefColor;
-  urlHref.style.textDecoration = "none";
-  urlHref.onmouseover = () => (urlHref.style.color = "#01505C");
+  urlHref.style.textDecoration = 'none';
+  urlHref.onmouseover = () => (urlHref.style.color = '#01505C');
   urlHref.onmouseleave = () => (urlHref.style.color = hrefColor);
   btnClose.onclick = () => closeItemContainer();
 };
@@ -78,8 +78,8 @@ module.exports = (list = func.list()) => {
 },{"../func":4,"../init":6}],4:[function(require,module,exports){
 module.exports = {
   sold: {
-    list: () => document.querySelectorAll(".item-info-price"),
-    isSold: (item, str = "SOLD") => item.innerText === str,
+    list: () => document.querySelectorAll('.item-info-price'),
+    isSold: (item, str = 'SOLD') => item.innerText === str,
     fade: elements =>
       [...elements].map(
         element =>
@@ -87,16 +87,16 @@ module.exports = {
       )
   },
   hold: {
-    list: () => document.querySelectorAll(".vertical-middle")
+    list: () => document.querySelectorAll('.vertical-middle')
   },
   funcmap: collection => [...collection].map(item => item)
 };
 
 },{}],5:[function(require,module,exports){
-const { init } = require("./init");
-const ItemContainer = require("./ItemContainer");
-const IdentifySoldItems = require("./IdentifySoldItems");
-const func = require("./func");
+const { init } = require('./init');
+const ItemContainer = require('./ItemContainer');
+const IdentifySoldItems = require('./IdentifySoldItems');
+const func = require('./func');
 
 module.exports = { init, ItemContainer, IdentifySoldItems, func };
 
