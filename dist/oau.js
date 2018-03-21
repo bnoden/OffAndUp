@@ -1,18 +1,20 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-const { init, ItemContainer, IdentifySoldItems } = require('./src');
+const { init, ItemContainer, IdentifySoldItems, func } = require("./src");
+const { hold, sold, funcmap } = func;
 
 init();
 
 let stateCheck = setInterval(() => {
-  if (document.readyState === 'complete') {
+  if (document.readyState === "complete") {
     ItemContainer();
     IdentifySoldItems();
     clearInterval(stateCheck);
   }
 }, 100);
 
-const items = () => document.querySelectorAll('.vertical-middle');
-const prices = () => document.querySelectorAll('.item-info-price');
+const items = () => funcmap(hold.list());
+const prices = () => funcmap(sold.list());
+
 let itemsLength = items().length;
 let pricesLength = prices().length;
 
@@ -22,23 +24,19 @@ setInterval(() => {
     ItemContainer();
   }
   if (pricesLength !== prices().length) {
-    pricesLength = items().length;
+    pricesLength = prices().length;
     IdentifySoldItems();
   }
 }, 100);
 
-},{"./src":4}],2:[function(require,module,exports){
-module.exports.IdentifySoldItems = price => {
-  price = document.querySelectorAll('.item-info-price');
-  for (let item in price) {
-    if (price[item].innerText === 'SOLD') {
-      // Make sold items visible while obvious that they're not available
-      price[item].parentNode.parentNode.parentNode.style.opacity = 0.25;
-    }
-  }
-};
+},{"./src":5}],2:[function(require,module,exports){
+const func = require("../func").sold;
 
-},{}],3:[function(require,module,exports){
+module.exports = (list = func.list(), isSold = func.isSold, fade = func.fade) =>
+  [...list].map(items => fade([items].filter(item => isSold(item))));
+
+},{"../func":4}],3:[function(require,module,exports){
+const func = require("../func").hold;
 const {
   btnClose,
   btnClose_bgColor,
@@ -47,45 +45,62 @@ const {
   itemFrame,
   itemURL,
   urlDisplay
-} = require('../init');
+} = require("../init");
 
-module.exports.ItemContainer = () => {
-  const itemPic = document.querySelectorAll('.vertical-middle');
+const buildItemContainer = (url, urlHref, hrefColor = "#0f94a8") => {
+  itemURL.innerText = itemURL.href = itemFrame.src = url;
+  itemURL.target = "_blank";
+  urlDisplay.appendChild(itemURL);
+  btnClose.innerText = "close [x]";
+  urlDisplay.appendChild(btnClose);
 
-  for (let i in itemPic) {
-    itemPic[i].onclick = event => {
-      event.preventDefault();
-      itemFrame.src = itemPic[i].parentNode.href;
-      itemURL.href = itemFrame.src;
-      itemURL.target = '_blank';
-      itemURL.innerText = itemFrame.src;
-      urlDisplay.appendChild(itemURL);
-      btnClose.innerText = 'close [x]';
-      urlDisplay.appendChild(btnClose);
-      appendLayers();
+  appendLayers();
 
-      const urlHref = urlDisplay.querySelector('a');
-      const hrefColor = '#0f94a8';
-      urlHref.style.color = hrefColor;
-      urlHref.style.textDecoration = 'none';
-
-      urlHref.onmouseover = () => (urlHref.style.color = '#01505C');
-      urlHref.onmouseleave = () => (urlHref.style.color = hrefColor);
-
-      openItemContainer();
-      btnClose.onclick = () => closeItemContainer();
-    };
-  }
+  urlHref = urlDisplay.querySelector("a");
+  urlHref.style.color = hrefColor;
+  urlHref.style.textDecoration = "none";
+  urlHref.onmouseover = () => (urlHref.style.color = "#01505C");
+  urlHref.onmouseleave = () => (urlHref.style.color = hrefColor);
+  btnClose.onclick = () => closeItemContainer();
 };
 
-},{"../init":5}],4:[function(require,module,exports){
-const { init } = require('./init');
-const { ItemContainer } = require('./ItemContainer');
-const { IdentifySoldItems } = require('./IdentifySoldItems');
+module.exports = (list = func.list()) => {
+  [...list].map(
+    item =>
+      (item.onclick = event => {
+        event.preventDefault();
+        buildItemContainer(item.parentNode.href);
+        openItemContainer();
+      })
+  );
+};
 
-module.exports = { init, ItemContainer, IdentifySoldItems };
+},{"../func":4,"../init":6}],4:[function(require,module,exports){
+module.exports = {
+  sold: {
+    list: () => document.querySelectorAll(".item-info-price"),
+    isSold: (item, str = "SOLD") => item.innerText === str,
+    fade: elements =>
+      [...elements].map(
+        element =>
+          (element.parentNode.parentNode.parentNode.style.opacity = 0.25)
+      )
+  },
+  hold: {
+    list: () => document.querySelectorAll(".vertical-middle")
+  },
+  funcmap: collection => [...collection].map(item => item)
+};
 
-},{"./IdentifySoldItems":2,"./ItemContainer":3,"./init":5}],5:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
+const { init } = require("./init");
+const ItemContainer = require("./ItemContainer");
+const IdentifySoldItems = require("./IdentifySoldItems");
+const func = require("./func");
+
+module.exports = { init, ItemContainer, IdentifySoldItems, func };
+
+},{"./IdentifySoldItems":2,"./ItemContainer":3,"./func":4,"./init":6}],6:[function(require,module,exports){
 const itemContainer = document.createElement('div');
 const bufferLayer = document.createElement('div');
 const itemFrame = document.createElement('iframe');
@@ -171,7 +186,6 @@ module.exports = {
   btnClose,
   btnClose_bgColor,
   bufferLayer,
-
   itemContainer,
   itemFrame,
   itemURL,

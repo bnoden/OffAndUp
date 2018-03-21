@@ -1,9 +1,4 @@
-module.exports.IdentifySoldItems = price => {
-  price = document.querySelectorAll('.item-info-price');
-  for (let item in price) {
-    if (price[item].innerText === 'SOLD') {
-      // Make sold items visible while obvious that they're not available
-      price[item].parentNode.parentNode.parentNode.style.opacity = 0.25;
-    }
-  }
-};
+const func = require('../func').sold;
+
+module.exports = (list = func.list(), isSold = func.isSold, fade = func.fade) =>
+  [...list].map(items => fade([items].filter(item => isSold(item))));

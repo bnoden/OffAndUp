@@ -1,3 +1,4 @@
+const func = require('../func').hold;
 const {
   btnClose,
   btnClose_bgColor,
@@ -8,31 +9,30 @@ const {
   urlDisplay
 } = require('../init');
 
-module.exports.ItemContainer = () => {
-  const itemPic = document.querySelectorAll('.vertical-middle');
+const buildItemContainer = (url, urlHref, hrefColor = '#0f94a8') => {
+  itemURL.innerText = itemURL.href = itemFrame.src = url;
+  itemURL.target = '_blank';
+  urlDisplay.appendChild(itemURL);
+  btnClose.innerText = 'close [x]';
+  urlDisplay.appendChild(btnClose);
 
-  for (let i in itemPic) {
-    itemPic[i].onclick = event => {
-      event.preventDefault();
-      itemFrame.src = itemPic[i].parentNode.href;
-      itemURL.href = itemFrame.src;
-      itemURL.target = '_blank';
-      itemURL.innerText = itemFrame.src;
-      urlDisplay.appendChild(itemURL);
-      btnClose.innerText = 'close [x]';
-      urlDisplay.appendChild(btnClose);
-      appendLayers();
+  appendLayers();
 
-      const urlHref = urlDisplay.querySelector('a');
-      const hrefColor = '#0f94a8';
-      urlHref.style.color = hrefColor;
-      urlHref.style.textDecoration = 'none';
+  urlHref = urlDisplay.querySelector('a');
+  urlHref.style.color = hrefColor;
+  urlHref.style.textDecoration = 'none';
+  urlHref.onmouseover = () => (urlHref.style.color = '#01505C');
+  urlHref.onmouseleave = () => (urlHref.style.color = hrefColor);
+  btnClose.onclick = () => closeItemContainer();
+};
 
-      urlHref.onmouseover = () => (urlHref.style.color = '#01505C');
-      urlHref.onmouseleave = () => (urlHref.style.color = hrefColor);
-
-      openItemContainer();
-      btnClose.onclick = () => closeItemContainer();
-    };
-  }
+module.exports = (list = func.list()) => {
+  [...list].map(
+    item =>
+      (item.onclick = event => {
+        event.preventDefault();
+        buildItemContainer(item.parentNode.href);
+        openItemContainer();
+      })
+  );
 };
