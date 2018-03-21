@@ -83,7 +83,8 @@ module.exports = {
     fade: elements =>
       [...elements].map(
         element =>
-          (element.parentNode.parentNode.parentNode.style.opacity = 0.25)
+          (element.parentNode.parentNode.parentNode.style.filter =
+            'blur(1.5px) contrast(1.25) grayscale(0.8) opacity(0.5)')
       )
   },
   hold: {
