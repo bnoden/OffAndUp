@@ -1,16 +1,14 @@
 const fs = require('fs');
 const clArgs = require('command-line-args');
-const { exit, stdin } = require('process');
+const util = require('util');
 
-const versionJSON = (filename = 'version.json') => {
-  return fs.readFileSync(filename);
-};
+const { exit, stdin } = require('process');
+const versionJSON = (filename = 'version.json') => fs.readFileSync(filename);
 const data = JSON.parse(versionJSON());
 
 const change = () => {
   stdin.resume();
   stdin.setEncoding('utf8');
-  const util = require('util');
 
   const definitions = [
     { name: 'current', type: String },
@@ -34,9 +32,11 @@ const change = () => {
       .inspect(text)
       .split('\\')[0]
       .replace(/(['])/g, '');
+
     const checkInput = versionInput.split('.');
 
     const inputSize = versionInput.length;
+
     defaultUpdate = (arr, num = 0, updatedStr) => {
       arr = inputSize ? versionInput.split('.') : data.current.split('.');
       num -= ~arr[2]; // Don't judge me. I'm experimenting.
@@ -74,12 +74,8 @@ const change = () => {
   };
 };
 
-const currentVersion = () => {
-  return data.current;
-};
-const previousVersion = () => {
-  return data.previous;
-};
+const currentVersion = () => data.current;
+const previousVersion = () => data.previous;
 
 const updateManifest = (browser, manifestData, updated) => {
   const manifest = `oau_${browser}/src/manifest.json`;
@@ -89,10 +85,8 @@ const updateManifest = (browser, manifestData, updated) => {
   fs.writeFileSync(manifest, updated);
 };
 
-const versionUpdated = () => {
-  const dotVer = fs.readFileSync('.ver');
-  return dotVer.toString() === data.current ? 0 : 1;
-};
+const versionUpdated = (dotVer = fs.readFileSync('.ver')) =>
+  dotVer.toString() === data.current ? 0 : 1;
 
 module.exports = {
   change,
