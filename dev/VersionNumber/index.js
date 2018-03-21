@@ -17,9 +17,8 @@ const change = () => {
   ];
   const options = clArgs(definitions);
 
-  const versionWrite = () => {
+  const versionWrite = () =>
     fs.writeFileSync('version.json', JSON.stringify(data));
-  };
 
   console.log('Previous version number:', data.previous);
   console.log('Current version number:', data.current);
