@@ -1,1 +1,28 @@
-{"author":"Brandon Oden","content_scripts":[{"matches":["https://offerup.com/search/*","https://offerup.com/item/detail/*","https://offerup.com/p/*","https://offerup.com/"],"js":["oau.min.js"]}],"description":"For offerup.com. Make sold items less visible, open item pages inside main window, and more.","homepage_url":"https://github.com/bnoden/OffAndUp","manifest_version":2,"name":"OffAndUp","page_action":{"default_icon":{"20":"icon.png"},"default_title":"OfferUp UI Extentions"},"version":"1.1.1","-ms-preload":{"backgroundScript":"backgroundScriptsAPIBridge.js","contentScript":"contentScriptsAPIBridge.js"}}
+{
+  "author": "Brandon Oden",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://offerup.com/search/*",
+        "https://offerup.com/item/detail/*",
+        "https://offerup.com/p/*",
+        "https://offerup.com/"
+      ],
+      "js": ["oau.min.js"]
+    }
+  ],
+  "description":
+    "For offerup.com. Make sold items less visible, open item pages inside main window, and more.",
+  "homepage_url": "https://github.com/bnoden/OffAndUp",
+  "manifest_version": 2,
+  "name": "OffAndUp",
+  "page_action": {
+    "default_icon": { "20": "icon.png" },
+    "default_title": "OfferUp UI Extentions"
+  },
+  "version": "1.1.4",
+  "-ms-preload": {
+    "backgroundScript": "backgroundScriptsAPIBridge.js",
+    "contentScript": "contentScriptsAPIBridge.js"
+  }
+}
